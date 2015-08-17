@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "HypnosisView.h"
 
 @interface AppDelegate ()
 
@@ -16,7 +17,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // first subview
+    CGRect firstFrame = self.window.bounds; // make the frame fill the bounds of its container
+    HypnosisView *firstView = [[HypnosisView alloc] initWithFrame:firstFrame];
+    [self.window addSubview:firstView];
+    
+    
+    self.window.backgroundColor = [UIColor whiteColor];
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
