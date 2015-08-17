@@ -8,6 +8,12 @@
 
 #import "HypnosisView.h"
 
+@interface HypnosisView ()
+
+@property (strong, nonatomic) UIColor *circleColor;
+
+@end
+
 @implementation HypnosisView
 
 
@@ -39,8 +45,7 @@
     // Configure line width to 10 points
     path.lineWidth = 10;
     
-    // Configure the drawing color to light gray
-    [[UIColor lightGrayColor] setStroke];
+    [self.circleColor setStroke];
     
     // Draw the line
     [path stroke];
@@ -64,8 +69,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // All HypnosisViews start with a clear background color
         self.backgroundColor = [UIColor clearColor];
+        self.circleColor = [UIColor lightGrayColor];
     }
     return self;
 }
