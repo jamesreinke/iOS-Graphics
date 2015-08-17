@@ -45,6 +45,13 @@
     // Draw the line
     [path stroke];
     
+    // Create a show effect
+    CGContextRef currentContext = UIGraphicsGetCurrentContext();
+    
+    CGContextSaveGState(currentContext);
+    CGContextSetShadow(currentContext, CGSizeMake(4,7), 3);
+    
+    
     // Create an UIImage object from file
     UIImage *ducks = [UIImage imageNamed:@"duck-family.png"];
     CGRect imageRect = CGRectMake(0.0, center.y -100, 300, 150);
